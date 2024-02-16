@@ -15,16 +15,6 @@ export const createSessionService = async ({
     const user: any = await userRepository.findOneBy({
       email: email,
     })
-
-    // if (!user) {
-    //     throw new AppError("Usuário e/ou senha inválidos", 404)
-    //   }
-    
-    //   const passwordMatch = await compare(password, user.password)
-    
-    //   if (!passwordMatch) {
-    //     throw new AppError("Usuário e/ou senha inválidos", 401)
-    //   }
     
       const token = jwt.sign(
         {
